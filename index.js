@@ -1,12 +1,12 @@
-"use strict";
+console.log("index.js inited")
 
-function __init__(){
+chrome.tabs.onCreated.addListener((tabId) => {
+    chrome.scripting.executeScript({
+        target:{ tabId: tabId.tabId },
+        files:["content.js"]
+    }).then(
+        ()=>{
+            console.log('foreground to be inited')
+        })
 
-    console.log('inited')
-
-    const element = document.getElementsByClassName('lnXdpd')
-    console.log(element)
-}
-
-console.log('13901-231209832019')
-__init__();
+});

@@ -1,15 +1,31 @@
 {
     "manifest_version": 3,
     "name":"Notificador +Coop",
+    "description":"Criada para auxiliar a identificação de mensagens não respondidas dentro da plataforma +coop. Prod: {24/07/2023, wOL-L}",
     "version": "0.0.1",
     "content_scripts":[
         {
             "matches":["<all_urls>"],
-            "css":["style.css"],
-            "js":["index.js"]
+            "js":["content.js"]
         }
     ],
+    "background":{
+        "service_worker":"index.js"
+    },
     "action":{
-        "default_popup":"popup.html"
-    }
+        "default_popup":"popup.html",
+        "default_icon":"notifyIcon.png"
+    },
+    "icons": {
+        "16": "notifyIcon.png",
+        "32": "notifyIcon.png",
+        "48": "notifyIcon.png",
+        "128": "notifyIcon.png"
+      },
+    "permissions":[
+        "tabs",
+        "scripting",
+        "notifications"
+    ],
+    "host_permissions": ["*://*/*"]
 }
