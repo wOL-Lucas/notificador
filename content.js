@@ -11,14 +11,12 @@ function init(){
         notify.close()
     }
     else{
-        console.log(`[Notificador +coop]: "Objeto não inicializado ${element.length}"`)
+        console.log(`[Notificador +Coop]: {"objeto não inicializado": {"length": "${element.length}"}}`)
     }
        
-}
+};
 
-function recursive_query(){
+(function recursive_query(){
     init()
     setTimeout(recursive_query,20000)
-}
-
-recursive_query()
+}());

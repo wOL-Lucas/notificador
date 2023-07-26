@@ -1,4 +1,4 @@
-console.log("index.js inited")
+console.log('[Notificador +Coop]: "service worker inited"')
 
 chrome.tabs.onCreated.addListener((tabId) => {
     chrome.scripting.executeScript({
@@ -6,7 +6,7 @@ chrome.tabs.onCreated.addListener((tabId) => {
         files:["content.js"]
     }).then(
         ()=>{
-            console.log('foreground to be inited')
+            console.log('foreground inited')
         })
 
 });
